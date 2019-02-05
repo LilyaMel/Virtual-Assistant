@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 //#define SIZE_MAX 200
 
@@ -31,8 +32,8 @@ int email(){
 
     printf("What do you want to do ? (read/send)");
     char action[20]="";
-    scanf("%s", action);
-    //lsif(action)
+    gets(action);
+    if(action)
 
 
 
