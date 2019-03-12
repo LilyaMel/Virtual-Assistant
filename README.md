@@ -6,11 +6,11 @@ Virtual assistants use Artificial Intelligence to match user text input to execu
 It can provide a wide variety of services, These includes:
 
 <ul>
-<li>Weather forecast of any place</li> 
-<li>Play multimedia files such as audio songs and video songs</li> 
+<li>Weather forecast of any place</li>
+<li>Play multimedia files such as audio songs and video songs</li>
 <li>Open Applications such as Web browsers, Media players(like vlc), text editors, etc</li>
-<li>Open directories in linux, Date and time</li> 
-<li>Search anything on Google</li> 
+<li>Open directories in linux, Date and time</li>
+<li>Search anything on Google</li>
 <li>Open websites of user’s choice</li>
 <li>Search anything on Youtube</li>
 <li>Open Calendar of any year</li>
@@ -21,19 +21,19 @@ It can provide a wide variety of services, These includes:
 
 # How it all works?
 
-We are reading user’s sentence and passing it through our Natural Language Processing code i.e “ Simplified Multinomial Naive Bayes Algorithm “. NLP code processes the sentence and redirects it to the action that should be performed based on the meaning of the sentence.
+The user's sentence is read and passed through our Natural Language Processing (NLP) code for processing. After the sentence is processed, it's redirected to the action to be performed based on the meaning of the sentence. Our NLP code uses a simplified version of the Multinomial Naive Bayes Algorithm.
 
-The functionality is executed such as 
+The following actions can be performed:
 <ul>
-<li>A media file (such as audio and media files) is played.
-<li>Weather forecast is shown after the user enters the location.
-<li>Calendar is shown of the desired year.
-<li>Youtube search is performed for the desired content.
-<li>Google search is performed for whatever the user wants to.
-<li>Restaurants in the given area/locality are shown.  
+<li>Play audio and media files
+<li>Display weather forecasts based on specified location
+<li>Display the calendar of a specified year
+<li>Perform YouTube video searches
+<li>Perform Google searches
+<li>Display restaurant recommendations
 </ul>
 
-**If the virtual assistant does not understand the user’s sentence, it will simply search that sentence on Google.**
+**If the virtual assistant does not understand the user’s sentence, a Google search performed.**
 
 # Artificial Intelligence
 
@@ -54,9 +54,9 @@ Notice that the classification for “What’s it like outside” found a term i
 
 # Setup
 
+### For Ubuntu (Debian based Linux)
 This program uses <b>GNUstep speech engine</b> for the purpose of text to speech.
 To use this feature few commands are needed:
-### For Ubuntu (Debian based Linux)
 
 say converts text to audible speech using the GNUstep speech engine.
 
@@ -73,11 +73,19 @@ In addition to this, following commands are needed to install the necessary pack
 
 ```
 $ sudo apt-get install libcurl4-openssl-dev
-
 $ sudo apt-get install libjson-c-dev
+$ sudo apt-get install libssl0.9.8
 
 ```
 ### For Fedora (RHEL based Linux)
+
+This program uses <b>Espeak</b> for the purpose of text to speech.
+
+espeak converts text to audible speech.
+
+```
+$ espeak "hello"
+```
 Firefox is needed to perform browser tasks such as opening google and youtube.
 
 ```
@@ -88,16 +96,17 @@ In addition to this, following commands are needed to install the necessary pack
 ```
 $ sudo yum install libcurl libcurl-devel
 $ sudo yum install json-c json-c-devel
+$ sudo dnf install openssl
 
 ```
 Compile
 ```
-gcc main.c $(pkg-config --libs --cflags libcurl) -l json-c -std=gnu11
+gcc main.c $(pkg-config --libs --cflags libcurl) -lssl -lcrypto -l json-c -std=gnu11
 
 ```
 # Restaurant
   Virtual Assistant can find restaurants in an area.
-  
+
 ![restaurants](https://user-images.githubusercontent.com/20038775/33029445-9b05b482-ce3e-11e7-8ed4-5782fe468530.png)
 
 
@@ -119,7 +128,7 @@ $ sudo yum install curl
 
 Virtual assistant can play any audio or video files of your choice.
 For playing media files vlc is needed.
-Get it here 
+Get it here
 ```
 $ sudo apt-get install vlc
 ```
@@ -158,6 +167,9 @@ Virtual assistant can show calendar of any year.
 open calendar
 ```
 ![calendar](https://user-images.githubusercontent.com/20038775/33027865-4b6d5f28-ce3a-11e7-8376-ac16e9da8606.png)
+# Emails
+
+In order to send emails via gmail using Virtual-Assistant, yoo need to allow acces from less secure apps on you gmail account.
 
 # Help
 
@@ -195,6 +207,3 @@ Permissions of this strong copyleft license are conditioned on making available 
 
 # Credits
 This project is developed with contributions by [Riya](https://github.com/riya-17)
-
-
-

@@ -1,8 +1,7 @@
-To compile email2.c :
-gcc -Wall -o email2  email2.c  -lssl -lcrypto
+To compile smtp.c :
+gcc -Wall -o smtp  smtp.c  -lssl -lcrypto
+gcc main.c $(pkg-config --libs --cflags libcurl) -lssl -lcrypto -l json-c -std=gnu11
 
-To execute :
-./email2
 
 To connect to mangabountynaia@gmail.com
 password : mangabountynaia
